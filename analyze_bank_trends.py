@@ -8,7 +8,7 @@ os.makedirs("visuals", exist_ok=True)
 
 # Load datasets
 bank = pd.read_csv("bank_marketing_data/bank_data/bank.csv", sep=';')
-bank_additional = pd.read_csv("bank_marketing_data/bank_additional_data/bank-additional/bank-additional-full.csv", sep=';')
+bank_additional = pd.read_csv("bank_marketing_data/bank_additional_data/bank-additional-full.csv", sep=';')
 
 # ---------- INSIGHT 1: Age distribution ----------
 plt.figure(figsize=(10, 6))
