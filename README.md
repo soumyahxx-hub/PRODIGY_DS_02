@@ -62,6 +62,7 @@ Count plots for subscription rates
 
 Education vs Subscription trends
 
+
 Correlation heatmap for numeric features
 🏁 Future Enhancements
 

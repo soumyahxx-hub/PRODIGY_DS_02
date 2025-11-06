@@ -1,6 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+
+# Create folder for visuals if not exists
+os.makedirs("visuals", exist_ok=True)
 
 # Load datasets
 bank = pd.read_csv("bank_marketing_data/bank_data/bank.csv", sep=';')
@@ -12,6 +16,8 @@ sns.histplot(bank_additional['age'], bins=30, kde=True, color='skyblue')
 plt.title("Age Distribution of Bank Clients")
 plt.xlabel("Age")
 plt.ylabel("Frequency")
+plt.tight_layout()
+plt.savefig("visuals/age_distribution.png", dpi=300)
 plt.show()
 
 # ---------- INSIGHT 2: Job type vs Subscription ----------
@@ -21,6 +27,8 @@ plt.title("Subscription by Job Type")
 plt.xlabel("Job")
 plt.ylabel("Count")
 plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("visuals/subscription_by_job.png", dpi=300)
 plt.show()
 
 # ---------- INSIGHT 3: Education level vs Subscription ----------
@@ -30,10 +38,15 @@ plt.title("Subscription by Education Level")
 plt.xlabel("Education")
 plt.ylabel("Count")
 plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("visuals/subscription_by_education.png", dpi=300)
 plt.show()
 
 # ---------- INSIGHT 4: Correlation heatmap ----------
 plt.figure(figsize=(10, 8))
 sns.heatmap(bank_additional.corr(numeric_only=True), annot=True, cmap="coolwarm")
 plt.title("Correlation Heatmap (Numeric Features)")
+plt.tight_layout()
+plt.savefig("visuals/correlation_heatmap.png", dpi=300)
 plt.show()
+
